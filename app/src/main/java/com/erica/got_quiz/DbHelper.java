@@ -1,3 +1,6 @@
+/**
+ * Created by schif_000 on 5/10/2016.
+ */
 package com.erica.got_quiz;
 
 import android.content.ContentValues;
@@ -9,9 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by schif_000 on 5/10/2016.
- */
+
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
@@ -21,11 +22,11 @@ public class DbHelper extends SQLiteOpenHelper {
     // Table Columns names
     private static final String KEY_ID = "_id";
     private static final String KEY_QUESTION = "question";
-    private static final String KEY_ANSWER = "answer"; //correct option
-    private static final String KEY_OPTA= "opta"; //option a
-    private static final String KEY_OPTB= "optb"; //option b
-    private static final String KEY_OPTC= "optc"; //option c
-    private static final String KEY_OPTD= "optd"; //option d
+    private static final String KEY_ANSWER = "answer";
+    private static final String KEY_OPTA= "opta";
+    private static final String KEY_OPTB= "optb";
+    private static final String KEY_OPTC= "optc";
+    private static final String KEY_OPTD= "optd";
 
     private SQLiteDatabase myDatabase;
 
@@ -40,23 +41,17 @@ public class DbHelper extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_QUESTION
                 + " TEXT, " + KEY_ANSWER+ " TEXT, "+KEY_OPTA +" TEXT, "
                 +KEY_OPTB +" TEXT, "+KEY_OPTC +" TEXT, "+KEY_OPTD+" TEXT)";
-
         db.execSQL(sql);
-
         LevelQs.addQuestions(this);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTION);
-
-        // Create tables again
-        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUESTION); // Drop older table if existed
+        onCreate(db); // Create tables again
     }
 
-    public int rowCount()
-    {
+    public int rowCount(){
         int row=0;
         String selectQuery = "SELECT  * FROM " + TABLE_QUESTION;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -65,9 +60,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return row;
     }
 
-
     public void addQuestion(Question quest) {
-
         ContentValues values = new ContentValues();
         values.put(KEY_QUESTION, quest.getQuestion());
         values.put(KEY_ANSWER, quest.getAnswer());
@@ -75,19 +68,15 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put(KEY_OPTB, quest.getOption2());
         values.put(KEY_OPTC, quest.getOption3());
         values.put(KEY_OPTD, quest.getOption4());
-
         // Inserting Row
         myDatabase.insert(TABLE_QUESTION, null, values);
     }
 
-
     public List<Question> getAllQuestions() {
-
         List<Question> quesList = new ArrayList<Question>();
         // Select All Query
         String selectQuery = "SELECT  * FROM " + TABLE_QUESTION;
         myDatabase=this.getReadableDatabase();
-
         Cursor cursor = myDatabase.rawQuery(selectQuery, null);
 
         // looping through all rows and adding to list
@@ -101,12 +90,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 quest.setOption2(cursor.getString(4));
                 quest.setOption3(cursor.getString(5));
                 quest.setOption4(cursor.getString(6));
-
                 quesList.add(quest);
-
             } while (cursor.moveToNext());
         }
-        // return quest list
         return quesList;
     }
 

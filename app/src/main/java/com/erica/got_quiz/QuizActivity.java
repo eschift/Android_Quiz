@@ -1,3 +1,7 @@
+/**
+ * Created by schif_000 on 5/10/2016.
+ */
+
 package com.erica.got_quiz;
 
 import android.app.Activity;
@@ -7,27 +11,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by schif_000 on 5/10/2016.
- */
-public class QuizActivity extends Activity {
 
-    List<Question> questionsList;
-    int score, round;
-    int ID;
-    int level;
-    int thisLevel, passedLevels;
-    Question currentQuestion;
-    TextView txtQuestion, times, scored, rounds;
-    Button btn1, btn2, btn3, btn4;
+public class QuizActivity extends Activity {
 
     public static final String filename = "LEVEL_DATA";
     SharedPreferences levelData;
-
+    List<Question> questionsList;
+    int score, round, ID, thisLevel, passedLevels;
+    Question currentQuestion;
+    TextView txtQuestion, scored, rounds;
+    Button btn1, btn2, btn3, btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +55,6 @@ public class QuizActivity extends Activity {
             ID = 114;
         }
 
-
         TextView textLevel = (TextView) findViewById(R.id.textLevel);
         textLevel.setText("Level: " + thisLevel); //if used without text use: textLevel.setText(String.valueOf(thisLevel));
 
@@ -80,10 +74,9 @@ public class QuizActivity extends Activity {
         btn4 = (Button) findViewById(R.id.ans4);
 
         scored = (TextView) findViewById(R.id.score); //the score
-        rounds = (TextView) findViewById(R.id.round); //the score
+        rounds = (TextView) findViewById(R.id.round); //the number of rounds
 
         //Set question
-
         setQuestionView();
 
         btn1.setOnClickListener(new View.OnClickListener(){
@@ -116,9 +109,6 @@ public class QuizActivity extends Activity {
 
     }
 
-    // private void init() {
-    //}
-
     private void getAnswer(String Answer) {
         if(currentQuestion.getAnswer().equals(Answer)){
             score++;
@@ -136,11 +126,9 @@ public class QuizActivity extends Activity {
             startActivity(intent);
             finish();
         }
-
     }
 
     private void setQuestionView() {
-
         txtQuestion.setText(currentQuestion.getQuestion());
         btn1.setText(currentQuestion.getOption1());
         btn2.setText(currentQuestion.getOption2());
@@ -151,7 +139,6 @@ public class QuizActivity extends Activity {
         rounds.setText(String.valueOf(round));
 
         if(thisLevel == 1){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+1;
             }
@@ -173,7 +160,6 @@ public class QuizActivity extends Activity {
         }
 
         if(thisLevel == 2){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+19;
             }
@@ -195,7 +181,6 @@ public class QuizActivity extends Activity {
         }
 
         if(thisLevel == 3){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+39;
             }
@@ -217,7 +202,6 @@ public class QuizActivity extends Activity {
         }
 
         if(thisLevel == 4){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+58;
             }
@@ -239,7 +223,6 @@ public class QuizActivity extends Activity {
         }
 
         if(thisLevel == 5){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+77;
             }
@@ -261,7 +244,6 @@ public class QuizActivity extends Activity {
         }
 
         if(thisLevel == 6){
-
             if (round == 1){
                 ID = (int)(Math.random()* 3)+96;
             }
@@ -281,8 +263,8 @@ public class QuizActivity extends Activity {
                 ID = (int)(Math.random()* 3)+111;
             }
         }
-        if(thisLevel == 7){
 
+        if(thisLevel == 7){
             if (round == 1){
                 ID = (int)(Math.random()* 3)+113;
             }
@@ -302,6 +284,5 @@ public class QuizActivity extends Activity {
                 ID = (int)(Math.random()* 3)+129;
             }
         }
-
     }
 }

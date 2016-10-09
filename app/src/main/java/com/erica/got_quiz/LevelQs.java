@@ -1,8 +1,9 @@
-package com.erica.got_quiz;
-
 /**
  * Created by schif_000 on 5/10/2016.
  */
+
+package com.erica.got_quiz;
+
 public class LevelQs {
 
     public static void addQuestions(DbHelper dbHelper) {
@@ -335,9 +336,6 @@ public class LevelQs {
         Question q133 = new Question("What is the name of Daenerys's green dragon?", "Drogon", "Viserion", "Rhaegal","Balerion", "Rhaegal");
         dbHelper.addQuestion(q133);
 
-
-        //Question q = new Question("", "", "", "","", "");
-        //dbHelper.addQuestion(q);
     }
 
 }

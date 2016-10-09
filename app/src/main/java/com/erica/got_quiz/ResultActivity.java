@@ -1,3 +1,7 @@
+/**
+ * Created by schif_000 on 5/10/2016.
+ */
+
 package com.erica.got_quiz;
 
 import android.app.Activity;
@@ -8,21 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * Created by schif_000 on 5/10/2016.
- */
 public class ResultActivity extends Activity {
 
     public static final String filename = "LEVEL_DATA";
     SharedPreferences levelData;
-
-    Button nextLevel;
-    Button restart;
-    // Button exitButton;
-    //Button homeButton;
-    int level;
-    int thisLevel;
-    int passedLevels;
+    Button nextLevel, restart;
+    int level, thisLevel, passedLevels;
     TextView endGame;
 
     @Override
@@ -35,7 +30,6 @@ public class ResultActivity extends Activity {
         thisLevel = levelData.getInt("currentLevel", 0);
         passedLevels = levelData.getInt("unlockedLevels", 0);
 
-
         Bundle b = getIntent().getExtras();
         int score = b.getInt("score");
         level = b.getInt("level");
@@ -45,7 +39,6 @@ public class ResultActivity extends Activity {
         if (score == 7 && passedLevels < thisLevel && passedLevels <= 7) {
             passedLevels++;
             SharedPreferences.Editor editor = levelData.edit();
-            // editor.putInt("currentLevel", thisLevel);
             editor.putInt("unlockedLevels", passedLevels);
             editor.commit();
         }
@@ -61,10 +54,8 @@ public class ResultActivity extends Activity {
 
             SharedPreferences.Editor editor = levelData.edit();
             editor.putInt("currentLevel", thisLevel);
-            // editor.putInt("unlockedLevels", passedLevels);
             editor.commit();
         }
-
 
         if (thisLevel == 8) {
             nextLevel.setVisibility(View.GONE);
@@ -74,26 +65,17 @@ public class ResultActivity extends Activity {
 
     }
 
-   /* public void exitApp(View view) {
-        finish();
-        System.exit(0);
-    }*/
-
     public void returnHome(View view) {
         Intent i = new Intent(this, LevelActivity.class);
         startActivity(i);
     }
 
-
     public void nextLevel(View view) {
-
         Intent intent2 = new Intent(this, QuizActivity.class);
         Bundle b = new Bundle();
-        // b.putInt("level", (level)); //Your score
-        intent2.putExtras(b); //Put your score to your next Intent
+        intent2.putExtras(b);
         startActivity(intent2);
         finish();
-
     }
 
     public void restart(View view) {
