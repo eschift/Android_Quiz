@@ -17,7 +17,6 @@ import java.util.List;
 public class QuizActivity extends Activity {
 
     List<Question> questionsList;
-    List<Integer> usedIDs = new ArrayList<Integer>();
     int score, round;
     int ID;
     int level;
@@ -34,9 +33,6 @@ public class QuizActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Bundle intent2 = getIntent().getExtras();
-        //level = intent2.getInt("level");
 
         levelData = getSharedPreferences(filename, 0);
         thisLevel = levelData.getInt("currentLevel", 0);
@@ -136,7 +132,6 @@ public class QuizActivity extends Activity {
             Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
             Bundle b = new Bundle();
             b.putInt("score", score); //Your score
-            //b.putInt("level", level); //Your score
             intent.putExtras(b); //Put your score to your next Intent
             startActivity(intent);
             finish();

@@ -15,15 +15,8 @@ public class LevelActivity extends Activity {
     public static final String filename = "LEVEL_DATA";
     SharedPreferences levelData;
     // int level;
-    Button levelOne;
-    Button levelTwo;
-    Button levelThree;
-    Button levelFour;
-    Button levelFive;
-    Button levelSix;
-    Button levelSeven;
-    int thisLevel;
-    int passedLevels;
+    Button levelOne,levelTwo, levelThree, levelFour, levelFive, levelSix, levelSeven, clear;
+    int thisLevel, passedLevels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,7 +141,6 @@ public class LevelActivity extends Activity {
             public void onClick(View v){
                 Intent intent = new Intent(LevelActivity.this, QuizActivity.class);
                 Bundle intent2 = new Bundle();
-                //intent2.putInt("level", level); //Your score
                 intent.putExtras(intent2); //Put your score to your next Intent
                 startActivity(intent);
                 finish();
@@ -156,6 +148,20 @@ public class LevelActivity extends Activity {
                 SharedPreferences.Editor editor = levelData.edit();
                 editor.putInt("currentLevel", 7);
                 editor.putInt("unlocked", passedLevels);
+                editor.commit();
+            }
+        });
+
+        clear = (Button) findViewById(R.id.clearButton);
+        clear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(LevelActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+
+                SharedPreferences.Editor editor = levelData.edit();
+                editor.clear();
                 editor.commit();
             }
         });

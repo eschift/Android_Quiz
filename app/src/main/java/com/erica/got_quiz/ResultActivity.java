@@ -74,10 +74,10 @@ public class ResultActivity extends Activity {
 
     }
 
-    public void exitApp(View view) {
+   /* public void exitApp(View view) {
         finish();
         System.exit(0);
-    }
+    }*/
 
     public void returnHome(View view) {
         Intent i = new Intent(this, LevelActivity.class);
