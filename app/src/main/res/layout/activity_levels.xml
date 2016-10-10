@@ -2,71 +2,103 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:focusableInTouchMode="true">
 
     <Button
         android:layout_width="@dimen/box_size"
         android:layout_height="@dimen/box_size"
-        android:text="level 1"
+        android:text="1"
         android:id="@+id/L1Button"
         android:nestedScrollingEnabled="true"
         android:onClick="start"
         android:layout_alignTop="@+id/L2Button"
         android:layout_toLeftOf="@+id/L2Button"
-        android:layout_toStartOf="@+id/L2Button" />
+        android:layout_toStartOf="@+id/L2Button"
+        android:background="@drawable/levelbutton"
+        android:layout_marginRight="6dp"
+        android:textSize="36dp"
+        android:textColor="@color/darkgrey" />
 
     <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="level 2"
+            android:text="2"
             android:id="@+id/L2Button"
             android:layout_above="@+id/L5Button"
             android:layout_toLeftOf="@+id/L6Button"
-            android:layout_toStartOf="@+id/L6Button" />
+            android:layout_toStartOf="@+id/L6Button"
+        android:background="@drawable/levelbutton"
+        android:layout_marginBottom="3dp"
+        android:textSize="36dp"
+        android:textColor="@color/darkgrey" />
 
         <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="Level 3"
+            android:text="3"
             android:id="@+id/L3Button"
             android:layout_alignBottom="@+id/L2Button"
             android:layout_toRightOf="@+id/L2Button"
-            android:layout_toEndOf="@+id/L2Button" />
+            android:layout_toEndOf="@+id/L2Button"
+            android:background="@drawable/levelbutton"
+            android:layout_marginLeft="6dp"
+            android:textSize="36dp"
+            android:textColor="@color/darkgrey" />
 
         <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="Level 4"
+            android:text="4"
             android:id="@+id/L4Button"
             android:layout_alignTop="@+id/L5Button"
             android:layout_toLeftOf="@+id/L5Button"
-            android:layout_toStartOf="@+id/L5Button" />
+            android:layout_toStartOf="@+id/L5Button"
+            android:background="@drawable/levelbutton"
+            android:layout_marginRight="6dp"
+            android:textSize="36dp"
+            android:textColor="@color/darkgrey" />
 
         <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="Level 5"
+            android:text="5"
             android:id="@+id/L5Button"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/levelbutton"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:textSize="36dp"
+            android:textColor="@color/darkgrey" />
 
         <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="Level 6"
+            android:text="6"
             android:id="@+id/L6Button"
             android:layout_alignBottom="@+id/L5Button"
             android:layout_toRightOf="@+id/L5Button"
-            android:layout_toEndOf="@+id/L5Button" />
+            android:layout_toEndOf="@+id/L5Button"
+            android:background="@drawable/levelbutton"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="3dp"
+            android:textSize="36dp"
+            android:textColor="@color/darkgrey" />
 
         <Button
             android:layout_width="@dimen/box_size"
             android:layout_height="@dimen/box_size"
-            android:text="Level 7"
+            android:text="7"
             android:id="@+id/L7Button"
             android:layout_below="@+id/L5Button"
             android:layout_toLeftOf="@+id/L6Button"
-            android:layout_toStartOf="@+id/L6Button" />
+            android:layout_toStartOf="@+id/L6Button"
+            android:background="@drawable/levelbutton"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="3dp"
+            android:textSize="36dp"
+            android:textColor="@color/darkgrey" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -78,7 +110,21 @@
             android:background="@drawable/clearbutton"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:gravity="top"/>
+            android:gravity="top"
+            android:contentDescription="clearButton" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/chooselevel"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp" />
 
 
 </RelativeLayout>

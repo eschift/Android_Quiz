@@ -7,6 +7,7 @@ package com.erica.got_quiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
@@ -110,6 +111,8 @@ public class QuizActivity extends Activity {
             }
         });
 
+        resetButtonColour();
+
     }
 
 
@@ -139,41 +142,49 @@ public class QuizActivity extends Activity {
                     finish();
                 }
             }
-        }, 600);
+        }, 500);
     }
 
-    private void resetButtonColour() {
-        btn1.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        btn2.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        btn3.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        btn4.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+    public void resetButtonColour() {
+        btn1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btn1.setTextColor(getResources().getColor(R.color.darkgrey));
         btn1.setEnabled(true);
+        btn2.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btn2.setTextColor(getResources().getColor(R.color.darkgrey));
         btn2.setEnabled(true);
+        btn3.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btn3.setTextColor(getResources().getColor(R.color.darkgrey));
         btn3.setEnabled(true);
+        btn4.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+        btn4.setTextColor(getResources().getColor(R.color.darkgrey));
         btn4.setEnabled(true);
     }
 
     private void setGreen() {
         if(btn1.isPressed()){
-            btn1.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn1.setBackgroundColor(getResources().getColor(R.color.green));
+            btn1.setTextColor(getResources().getColor(R.color.white));
             btn2.setEnabled(false);
             btn3.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn2.isPressed()) {
-            btn2.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn2.setBackgroundColor(getResources().getColor(R.color.green));
+            btn2.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn3.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn3.isPressed()){
-            btn3.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn3.setBackgroundColor(getResources().getColor(R.color.green));
+            btn3.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn2.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn4.isPressed()) {
-            btn4.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn4.setBackgroundColor(getResources().getColor(R.color.green));
+            btn4.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn2.setEnabled(false);
             btn3.setEnabled(false);
@@ -182,25 +193,29 @@ public class QuizActivity extends Activity {
 
     private void setRed() {
         if(btn1.isPressed()){
-            btn1.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn1.setBackgroundColor(getResources().getColor(R.color.red));
+            btn1.setTextColor(getResources().getColor(R.color.white));
             btn2.setEnabled(false);
             btn3.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn2.isPressed()) {
-            btn2.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn2.setBackgroundColor(getResources().getColor(R.color.red));
+            btn2.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn3.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn3.isPressed()){
-            btn3.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn3.setBackgroundColor(getResources().getColor(R.color.red));
+            btn3.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn2.setEnabled(false);
             btn4.setEnabled(false);
         }
         if(btn4.isPressed()) {
-            btn4.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn4.setBackgroundColor(getResources().getColor(R.color.red));
+            btn4.setTextColor(getResources().getColor(R.color.white));
             btn1.setEnabled(false);
             btn2.setEnabled(false);
             btn3.setEnabled(false);

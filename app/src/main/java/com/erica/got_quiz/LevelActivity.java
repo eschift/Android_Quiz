@@ -174,36 +174,78 @@ public class LevelActivity extends Activity {
 
         if(passedLevels == 0){
             levelTwo.setEnabled(false);
+            levelTwo.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelTwo.setText("");
             levelThree.setEnabled(false);
+            levelThree.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelThree.setText("");
             levelFour.setEnabled(false);
+            levelFour.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFour.setText("");
             levelFive.setEnabled(false);
+            levelFive.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFive.setText("");
             levelSix.setEnabled(false);
+            levelSix.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSix.setText("");
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
         if(passedLevels == 1){
             levelThree.setEnabled(false);
+            levelThree.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelThree.setText("");
             levelFour.setEnabled(false);
+            levelFour.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFour.setText("");
             levelFive.setEnabled(false);
+            levelFive.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFive.setText("");
             levelSix.setEnabled(false);
+            levelSix.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSix.setText("");
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
         if(passedLevels == 2){
             levelFour.setEnabled(false);
+            levelFour.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFour.setText("");
             levelFive.setEnabled(false);
+            levelFive.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFive.setText("");
             levelSix.setEnabled(false);
+            levelSix.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSix.setText("");
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
         if(passedLevels == 3){
             levelFive.setEnabled(false);
+            levelFive.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelFive.setText("");
             levelSix.setEnabled(false);
+            levelSix.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSix.setText("");
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
         if(passedLevels == 4){
             levelSix.setEnabled(false);
+            levelSix.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSix.setText("");
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
         if(passedLevels == 5){
             levelSeven.setEnabled(false);
+            levelSeven.setBackground(getResources().getDrawable(R.drawable.lockbutton));
+            levelSeven.setText("");
         }
     }
 

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_above="@+id/btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp" />
+        android:layout_marginBottom="41dp"
+        android:textColor="@color/darkgrey" />
 
     <Button
         android:id="@+id/btn"
@@ -24,7 +25,10 @@
         android:layout_above="@+id/btn2"
         android:layout_alignLeft="@+id/btn2"
         android:layout_alignStart="@+id/btn2"
-        android:layout_marginBottom="35dp" />
+        android:layout_marginBottom="35dp"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:gravity="center" />
 
     <Button
         android:id="@+id/btn2"
@@ -36,7 +40,10 @@
         android:text="next level"
         android:visibility="invisible"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:gravity="center" />
 
 
     <TextView
