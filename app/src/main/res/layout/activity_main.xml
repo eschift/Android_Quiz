@@ -137,9 +137,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textLevel"
-        android:layout_below="@+id/ans4"
-        android:layout_toRightOf="@+id/score"
-        android:layout_toEndOf="@+id/score" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -151,5 +151,17 @@
         android:layout_toLeftOf="@+id/textView6"
         android:layout_toStartOf="@+id/textView6"
         android:visibility="invisible" />
+
+    <ImageButton
+        android:layout_width="@dimen/home_width"
+        android:layout_height="@dimen/home_height"
+        android:id="@+id/homeButton"
+        android:onClick="returnHome"
+        android:background="@drawable/home"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp" />
 
 </RelativeLayout>

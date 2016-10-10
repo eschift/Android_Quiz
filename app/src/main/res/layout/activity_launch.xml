@@ -14,7 +14,7 @@
         android:paddingRight="8dp"
         android:layout_above="@+id/disclaimer"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,31 +29,30 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
-        android:textColor="@color/darkgrey" />
+        android:textColor="@color/darkgrey"
+        android:layout_margin="8dp"
+        android:textSize="14dp"
+        android:textIsSelectable="true" />
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/targaryen"
         android:layout_above="@+id/start"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="100dp" />
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView2"
+        android:id="@+id/title"
         android:layout_alignParentTop="true"
-        android:background="@drawable/quizofthrones"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="true"
-        android:contentDescription="title"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="12dp" />
+        android:src="@drawable/quizofthrones1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-20dp" />
 
 </RelativeLayout>

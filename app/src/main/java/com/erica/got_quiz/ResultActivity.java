@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 public class ResultActivity extends Activity {
 
@@ -35,6 +36,8 @@ public class ResultActivity extends Activity {
         level = b.getInt("level");
         textResult.setText("Your score is " + score + "/7");
         level++;
+
+        setSigil();
 
         if (score == 7 && passedLevels < thisLevel && passedLevels <= 7) {
             passedLevels++;
@@ -62,6 +65,43 @@ public class ResultActivity extends Activity {
             endGame = (TextView) findViewById(R.id.endGameText);
             endGame.setVisibility(View.VISIBLE);
         }
+
+    }
+
+    public void setSigil() {
+
+        ImageView sigil = (ImageView) findViewById(R.id.sigil);
+
+        switch(thisLevel){
+            case 1:
+                thisLevel = 1;
+                sigil.setImageResource(R.drawable.stark);
+                break;
+            case 2:
+                thisLevel = 2;
+                sigil.setImageResource(R.drawable.lannister);
+                break;
+            case 3:
+                thisLevel = 3;
+                sigil.setImageResource(R.drawable.baratheon);
+                break;
+            case 4:
+                thisLevel = 4;
+                sigil.setImageResource(R.drawable.arryn);
+                break;
+            case 5:
+                thisLevel = 5;
+                sigil.setImageResource(R.drawable.greyjoy);
+                break;
+            case 6:
+                thisLevel = 6;
+                sigil.setImageResource(R.drawable.targaryen);
+                break;
+            case 7:
+                thisLevel = 7;
+                sigil.setVisibility(View.GONE);
+        }
+
 
     }
 
