@@ -2,20 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/stark"
-        android:baselineAlignBottom="false"
-        android:paddingTop="200dp"
-        android:layout_marginLeft="-150dp"
-        android:layout_marginBottom="-100dp"
-        android:layout_alignRight="@+id/clearButton"
-        android:layout_alignEnd="@+id/clearButton" />
+    android:background="@drawable/background">
 
     <Button
         android:layout_width="@dimen/box_size"
@@ -81,14 +68,17 @@
             android:layout_toLeftOf="@+id/L6Button"
             android:layout_toStartOf="@+id/L6Button" />
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="clear progress"
             android:id="@+id/clearButton"
             android:layout_marginBottom="27dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/clearbutton"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="top"/>
 
 
 </RelativeLayout>

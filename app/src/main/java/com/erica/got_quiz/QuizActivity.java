@@ -7,7 +7,10 @@ package com.erica.got_quiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -109,24 +112,101 @@ public class QuizActivity extends Activity {
 
     }
 
+
     private void getAnswer(String Answer) {
         if(currentQuestion.getAnswer().equals(Answer)){
+            setGreen();
             score++;
             scored.setText(String.valueOf(score));
+        } else {
+            setRed();
         }
 
-        if(round<7){
-            currentQuestion=questionsList.get(ID);
-            setQuestionView();
-        }else{
-            Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-            Bundle b = new Bundle();
-            b.putInt("score", score); //Your score
-            intent.putExtras(b); //Put your score to your next Intent
-            startActivity(intent);
-            finish();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(round<7){
+                    currentQuestion=questionsList.get(ID);
+                    resetButtonColour();
+                    setQuestionView();
+                }else{
+                    Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("score", score); //Your score
+                    intent.putExtras(b); //Put your score to your next Intent
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        }, 600);
+    }
+
+    private void resetButtonColour() {
+        btn1.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        btn2.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        btn3.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        btn4.getBackground().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
+        btn1.setEnabled(true);
+        btn2.setEnabled(true);
+        btn3.setEnabled(true);
+        btn4.setEnabled(true);
+    }
+
+    private void setGreen() {
+        if(btn1.isPressed()){
+            btn1.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn2.setEnabled(false);
+            btn3.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn2.isPressed()) {
+            btn2.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn3.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn3.isPressed()){
+            btn3.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn2.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn4.isPressed()) {
+            btn4.getBackground().setColorFilter(getResources().getColor(R.color.green), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn2.setEnabled(false);
+            btn3.setEnabled(false);
+        }
+    };
+
+    private void setRed() {
+        if(btn1.isPressed()){
+            btn1.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn2.setEnabled(false);
+            btn3.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn2.isPressed()) {
+            btn2.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn3.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn3.isPressed()){
+            btn3.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn2.setEnabled(false);
+            btn4.setEnabled(false);
+        }
+        if(btn4.isPressed()) {
+            btn4.getBackground().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.MULTIPLY);
+            btn1.setEnabled(false);
+            btn2.setEnabled(false);
+            btn3.setEnabled(false);
         }
     }
+
 
     private void setQuestionView() {
         txtQuestion.setText(currentQuestion.getQuestion());

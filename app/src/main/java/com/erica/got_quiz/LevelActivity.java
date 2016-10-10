@@ -3,9 +3,12 @@ package com.erica.got_quiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.ImageButton;
 
 /**
  * Created by schif_000 on 5/10/2016.
@@ -15,8 +18,9 @@ public class LevelActivity extends Activity {
     public static final String filename = "LEVEL_DATA";
     SharedPreferences levelData;
     // int level;
-    Button levelOne,levelTwo, levelThree, levelFour, levelFive, levelSix, levelSeven, clear;
+    Button levelOne,levelTwo, levelThree, levelFour, levelFive, levelSix, levelSeven;
     int thisLevel, passedLevels;
+    ImageButton clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,8 @@ public class LevelActivity extends Activity {
         levelData = getSharedPreferences(filename, 0);
         thisLevel = levelData.getInt("currentLevel", 0);
         passedLevels = levelData.getInt("unlockedLevels", 0);
+
+
 
 
         levelOne = (Button) findViewById(R.id.L1Button);
@@ -152,7 +158,7 @@ public class LevelActivity extends Activity {
             }
         });
 
-        clear = (Button) findViewById(R.id.clearButton);
+        clear = (ImageButton) findViewById(R.id.clearButton);
         clear.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

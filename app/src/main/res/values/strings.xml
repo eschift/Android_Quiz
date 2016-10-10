@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GoT_Quiz</string>
+    <string name="disclaimer">QUESTIONS IN THIS QUIZ ARE BASE ON THE HBO SERIES GAME OF THRONES AND NOT THE SONG OF ICE AND FIRE NOVELS BY GEORGE R.R. MARTIN. CONTAINS SPOILERS SEASONS 1-6</string>
 </resources>

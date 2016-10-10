@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.erica.got_quiz.MainActivity">
+    tools:context="com.erica.got_quiz.MainActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
         android:id="@+id/ans1"
         android:layout_marginBottom="25dp"
         android:layout_above="@+id/ans2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="match_parent"
@@ -37,7 +38,7 @@
         android:id="@+id/ans2"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="25dp" />
 
     <Button
         android:layout_width="match_parent"
@@ -46,7 +47,7 @@
         android:id="@+id/ans3"
         android:layout_marginBottom="25dp"
         android:layout_below="@+id/ans2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="match_parent"

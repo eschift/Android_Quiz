@@ -22,10 +22,10 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String KEY_ID = "_id";
     private static final String KEY_QUESTION = "question";
     private static final String KEY_ANSWER = "answer";
-    private static final String KEY_OPTA= "opta";
-    private static final String KEY_OPTB= "optb";
-    private static final String KEY_OPTC= "optc";
-    private static final String KEY_OPTD= "optd";
+    private static final String KEY_OPTA= "optionA";
+    private static final String KEY_OPTB= "optionB";
+    private static final String KEY_OPTC= "optionC";
+    private static final String KEY_OPTD= "optionD";
 
     private SQLiteDatabase myDatabase;
 
